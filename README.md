@@ -1,5 +1,7 @@
 # ProgramingProject_HITS-PageRankAlgo
 Implementation of Kleinberg’s HITS Algorithm, and Google’s PageRank algorithm.
+•	HITS(Hyperlink-Induced Topic Search)also known as hubs and authorities is a link analysis algorithm that rates Web pages.
+•	PageRank (PR) is an algorithm used by Google Search to rank web pages in their search engine results.
 
 Problem Statement:
 •	The two algorithms are iterative. At any iteration ‘i’ all pagerank values are computed using results from iteration i-1. 
