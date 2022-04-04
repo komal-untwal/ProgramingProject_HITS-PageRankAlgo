@@ -1,4 +1,6 @@
 # ProgramingProject_HITS-PageRankAlgo
+The World Wide Web is expanding day by day and so is the amount of data available on web. In such a situation in order to trace relevant data, users mainly rely on varied search engines for finding suitable answers for their queries. This common trend has resulted in a rise in the number as well as use of different search engines. The present state of affairs necessitates comparison and analysis of different link analysis algorithms employed by search engines for ranking web pages against user queries. In this project, I intend to compare two popular web page ranking algorithms namely: HITS algorithm and PageRank algorithm. 
+
 Implementation of Kleinberg’s HITS Algorithm, and Google’s PageRank algorithm.
 •	HITS(Hyperlink-Induced Topic Search)also known as hubs and authorities is a link analysis algorithm that rates Web pages.
 •	PageRank (PR) is an algorithm used by Google Search to rank web pages in their search engine results.
