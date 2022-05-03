@@ -1,4 +1,5 @@
-# ProgramingProject_HITS-PageRankAlgo
+# Kleinberg’s HITS Algorithm, and Google’s PageRank algorithm
+
 The World Wide Web is expanding day by day and so is the amount of data available on web. In such a situation in order to trace relevant data, users mainly rely on varied search engines for finding suitable answers for their queries. This common trend has resulted in a rise in the number as well as use of different search engines. The present state of affairs necessitates comparison and analysis of different link analysis algorithms employed by search engines for ranking web pages against user queries. In this project, I intend to compare two popular web page ranking algorithms namely: HITS algorithm and PageRank algorithm. 
 
 Implementation of Kleinberg’s HITS Algorithm, and Google’s PageRank algorithm.
@@ -35,52 +36,54 @@ java Hits 15 -1 largegraph.txt
 
 Output:
 
-Iter: 17
- A/H[0]=0.0000000/0.0000000
- A/H[1]=0.0000000/0.0000000
- A/H[2]=0.0000000/0.5773503
- A/H[3]=0.4082483/0.0000044
- A/H[4]=0.0000062/0.0000000
- A/H[5]=0.4082483/0.5773503
- A/H[6]=0.0000000/0.0000044
- A/H[7]=0.0000062/0.5773503
- A/H[8]=0.8164966/0.0000044
- A/H[9]=0.0000062/0.0000044
- A/H[10]=0.0000062/0.0000000
- A/H[11]=0.0000000/0.0000000
- A/H[12]=0.0000000/0.0000000
- A/H[13]=0.0000000/0.0000000
- A/H[14]=0.0000000/0.0000000
- A/H[15]=0.0000000/0.0000000
- A/H[16]=0.0000000/0.0000000
- A/H[17]=0.0000000/0.0000000
- A/H[18]=0.0000000/0.0000000
- A/H[19]=0.0000000/0.0000000
+Iter: 17  
+ A/H[0]=0.0000000/0.0000000  
+ A/H[1]=0.0000000/0.0000000  
+ A/H[2]=0.0000000/0.5773503   
+ A/H[3]=0.4082483/0.0000044  
+ A/H[4]=0.0000062/0.0000000    
+ A/H[5]=0.4082483/0.5773503    
+ A/H[6]=0.0000000/0.0000044   
+ A/H[7]=0.0000062/0.5773503   
+ A/H[8]=0.8164966/0.0000044  
+ A/H[9]=0.0000062/0.0000044  
+ A/H[10]=0.0000062/0.0000000  
+ A/H[11]=0.0000000/0.0000000  
+ A/H[12]=0.0000000/0.0000000  
+ A/H[13]=0.0000000/0.0000000  
+ A/H[14]=0.0000000/0.0000000  
+ A/H[15]=0.0000000/0.0000000  
+ A/H[16]=0.0000000/0.0000000  
+ A/H[17]=0.0000000/0.0000000  
+ A/H[18]=0.0000000/0.0000000  
+ A/H[19]=0.0000000/0.0000000 
+ 
 ---------------------------------------------
 
 Command to implement pagerank implementation: 
 java Pgrk 15 -1 largegraph.txt
 
-Output:
-Iter : 6
-P[0] = 0.0075000
-P[1] = 0.0075000
-P[2] = 0.0075000
-P[3] = 0.0106875
-P[4] = 0.0165844
-P[5] = 0.0106875
-P[6] = 0.0075000
-P[7] = 0.0138750
-P[8] = 0.0283781
-P[9] = 0.0316214
-P[10] = 0.0343782
-P[11] = 0.0075000
-P[12] = 0.0075000
-P[13] = 0.0075000
-P[14] = 0.0075000
-P[15] = 0.0075000
-P[16] = 0.0075000
-P[17] = 0.0075000
-P[18] = 0.0075000
-P[19] = 0.0075000
+Output:  
+Iter : 6  
+P[0] = 0.0075000  
+P[1] = 0.0075000  
+P[2] = 0.0075000  
+P[3] = 0.0106875  
+P[4] = 0.0165844  
+P[5] = 0.0106875  
+P[6] = 0.0075000  
+P[7] = 0.0138750  
+P[8] = 0.0283781  
+P[9] = 0.0316214  
+P[10] = 0.0343782  
+P[11] = 0.0075000  
+P[12] = 0.0075000  
+P[13] = 0.0075000  
+P[14] = 0.0075000  
+P[15] = 0.0075000  
+P[16] = 0.0075000  
+P[17] = 0.0075000  
+P[18] = 0.0075000  
+P[19] = 0.0075000   
+
 ---------------------------------------------
