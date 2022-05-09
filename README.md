@@ -6,19 +6,62 @@ Implementation of Kleinberg’s HITS Algorithm, and Google’s PageRank algorith
 •	HITS(Hyperlink-Induced Topic Search)also known as hubs and authorities is a link analysis algorithm that rates Web pages.  
 •	PageRank (PR) is an algorithm used by Google Search to rank web pages in their search engine results.  
 
-Problem Statement:  
+# Problem Statement:  
+•	Compute K iterations of the HITS & pagerank algorithm to assign an authority & hub score to each node.
 •	The two algorithms are iterative. At any iteration ‘i’ all pagerank values are computed using results from iteration i-1.  
-•	The initialvalue helps us to set-up the initial values of iteration 0 as needed.  
+•	The initialvalue helps us to set-up the initial values of iteration 0 as needed.
+•	HITS is based on two basic terms: hubs and authorities to define a recursive relationship between webpages.  
 •	In PageRank, parameter d is set to 0.85.   
 •	The PageRank PR(A) of vertex A depends on the PageRanks of vertices T1,….,Tm incident to A, i.e. pointing to A.   
 •	The pageranks at iteration i use the pageranks of iteration t-1 (synchronous update). Thus PR(A)  on the left in the PageRank equation is for iteration i, but all PR (Ti) values are from the previous iteration t -1.   
 •	We run the ’algorithm’ either for a fixed number of iterations and iterations determines that, or for a fixed errorrate (an alias for iterations); an iterations equal to 0 corresponds to a default errorrate of 10^-5. A -1, -2, etc , -6 for iterations becomes an errorrate of 10^ -1;10^-2,….,10^-6 respectively.   
 •	At iteration t when all authority/hub/PageRank values have been completed, we compare for every vertex the current and the previous iteration values. If the difference is less than errorrate for EVERY VERTEX, then and only then can we stop at iteration t.  
-•	Argument initialvalue sets the initial vector values. If it is 0 they are initialized to 0, if it is 1 they are initialized to 1. If it is -1 they are initialized to 1/N, where N is the number of web-pages (vertices of the graph). If it is -2 they are initialized to 1/N^(1/2).  
-•	Argument filename describes the input (directed) graph and it has the following form. The first line contains two numbers: the number of vertices followed by the number of edges which is also the number of remaining lines.  
 
-Sample Input:
+# Input file & command-line arguments discription:
+The input for both of the algorithm problems would be a file a containing a graph represented through an adjacency list representation   
 
+* The command-line interface is as follows:  
+% java <program_name> <iterations> <initialvalue> <filename>  
+ 
+•	Argument iterations denotes the number of iterations if it is a positive integer or an errorrate for a negative or zero integer value.  
+•	Argument initialvalue sets the initial vector values. If it is 0 they are initialized to 0, if it is 1 they are initialized to 1. If it is -1 they are initialized to 1/N, if it is -2 they are initialized to 1/N^(1/2),where N is the number of web-pages (vertices of the graph).    
+•	Argument filename describes the input (directed) graph and it has the following form. The first line contains two numbers: the number of vertices followed by the number of edges which is also the number of remaining lines.   
+
+Sample Input scenarios:
+
+4 4
+0 2
+0 3
+1 0
+2 1
+ 
+Execution command for Hits algorithm implementation:
+java Hits 7 1 samplegraph2.txt
+ 
+Output: 
+Base: 0 : A/H[0]=1.0000000/1.0000000 A/H[1]=1.0000000/1.0000000 A/H[2]=1.0000000/1.0000000 A/H[3]=1.0000000/1.0000000
+Iter: 1 : A/H[0]=0.5000000/0.8164966 A/H[1]=0.5000000/0.4082483 A/H[2]=0.5000000/0.4082483 A/H[3]=0.5000000/0.0000000
+Iter: 2 : A/H[0]=0.3162278/0.9428090 A/H[1]=0.3162278/0.2357023 A/H[2]=0.6324555/0.2357023 A/H[3]=0.6324555/0.0000000
+Iter: 3 : A/H[0]=0.1714986/0.9847319 A/H[1]=0.1714986/0.1230915 A/H[2]=0.6859943/0.1230915 A/H[3]=0.6859943/0.0000000
+Iter: 4 : A/H[0]=0.0877058/0.9961165 A/H[1]=0.0877058/0.0622573 A/H[2]=0.7016464/0.0622573 A/H[3]=0.7016464/0.0000000
+Iter: 5 : A/H[0]=0.0441081/0.9990249 A/H[1]=0.0441081/0.0312195 A/H[2]=0.7057297/0.0312195 A/H[3]=0.7057297/0.0000000
+Iter: 6 : A/H[0]=0.0220863/0.9997559 A/H[1]=0.0220863/0.0156212 A/H[2]=0.7067618/0.0156212 A/H[3]=0.7067618/0.0000000
+Iter: 7 : A/H[0]=0.0110472/0.9999390 A/H[1]=0.0110472/0.0078120 A/H[2]=0.7070205/0.0078120 A/H[3]=0.7070205/0.0000000
+ 
+with errorate = -2: java Hits -2 1 samplegraph2.txt
+output:
+ 
+Base: 0 : A/H[0]=1.0000000/1.0000000 A/H[1]=1.0000000/1.0000000 A/H[2]=1.0000000/1.0000000 A/H[3]=1.0000000/1.0000000
+Iter: 1 : A/H[0]=0.5000000/0.8164966 A/H[1]=0.5000000/0.4082483 A/H[2]=0.5000000/0.4082483 A/H[3]=0.5000000/0.0000000
+Iter: 2 : A/H[0]=0.3162278/0.9428090 A/H[1]=0.3162278/0.2357023 A/H[2]=0.6324555/0.2357023 A/H[3]=0.6324555/0.0000000
+Iter: 3 : A/H[0]=0.1714986/0.9847319 A/H[1]=0.1714986/0.1230915 A/H[2]=0.6859943/0.1230915 A/H[3]=0.6859943/0.0000000
+Iter: 4 : A/H[0]=0.0877058/0.9961165 A/H[1]=0.0877058/0.0622573 A/H[2]=0.7016464/0.0622573 A/H[3]=0.7016464/0.0000000
+Iter: 5 : A/H[0]=0.0441081/0.9990249 A/H[1]=0.0441081/0.0312195 A/H[2]=0.7057297/0.0312195 A/H[3]=0.7057297/0.0000000
+Iter: 6 : A/H[0]=0.0220863/0.9997559 A/H[1]=0.0220863/0.0156212 A/H[2]=0.7067618/0.0156212 A/H[3]=0.7067618/0.0000000
+Iter: 7 : A/H[0]=0.0110472/0.9999390 A/H[1]=0.0110472/0.0078120 A/H[2]=0.7070205/0.0078120 A/H[3]=0.7070205/0.0000000
+Iter: 8 : A/H[0]=0.0055241/0.9999847 A/H[1]=0.0055241/0.0039062 A/H[2]=0.7070852/0.0039062 A/H[3]=0.7070852/0.0000000 
+ 
+For n(number of nodes >10) : 
 largegraph.txt:  
 
 20 8
