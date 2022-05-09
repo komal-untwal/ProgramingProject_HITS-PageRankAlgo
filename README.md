@@ -7,15 +7,23 @@ Implementation of Kleinberg’s HITS Algorithm, and Google’s PageRank algorith
 •	PageRank (PR) is an algorithm used by Google Search to rank web pages in their search engine results.  
 
 # Problem Statement:  
-•	Compute K iterations of the HITS & pagerank algorithm to assign an authority & hub score to each node.
-•	The two algorithms are iterative. At any iteration ‘i’ all pagerank values are computed using results from iteration i-1.  
-•	The initialvalue helps us to set-up the initial values of iteration 0 as needed.
-•	HITS is based on two basic terms: hubs and authorities to define a recursive relationship between webpages.  
-•	In PageRank, parameter d is set to 0.85.   
-•	The PageRank PR(A) of vertex A depends on the PageRanks of vertices T1,….,Tm incident to A, i.e. pointing to A.   
-•	The pageranks at iteration i use the pageranks of iteration t-1 (synchronous update). Thus PR(A)  on the left in the PageRank equation is for iteration i, but all PR (Ti) values are from the previous iteration t -1.   
-•	We run the ’algorithm’ either for a fixed number of iterations and iterations determines that, or for a fixed errorrate (an alias for iterations); an iterations equal to 0 corresponds to a default errorrate of 10^-5. A -1, -2, etc , -6 for iterations becomes an errorrate of 10^ -1;10^-2,….,10^-6 respectively.   
+•	Compute K iterations of the HITS & pagerank algorithm to rank web pages.
+•	The two algorithms are iterative. At any iteration ‘i’ all pagerank values are computed using results from iteration i-1.   
+•	The initialvalue helps us to set-up the initial values of iteration 0 as needed.   
+•	We run both the ’algorithm’ either for a fixed number of iterations and iterations determines that, or for a fixed errorrate (an alias for iterations); an iterations equal to 0 corresponds to a default errorrate of 10^-5. A -1, -2, etc , -6 for iterations becomes an errorrate of 10^ -1;10^-2,….,10^-6 respectively.   
 •	At iteration t when all authority/hub/PageRank values have been completed, we compare for every vertex the current and the previous iteration values. If the difference is less than errorrate for EVERY VERTEX, then and only then can we stop at iteration t.  
+  
+# HITS Algorithm: 
+•	HITS is based on two basic terms: hubs and authorities to define a recursive relationship between webpages.   
+•	HITS assigns two scores for each page: its authority, which estimates the value of the content of the page, and its hub value, which estimates the value of its links to other pages.
+
+# Pagerank Algorithm:   
+•	PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is.   
+•	PageRank algorithm is based on idea of Random Surfing & given by the below equation.  
+  PR(A) = (1-d)/n + d * {PR(T1)/C(T1) + PR(T2)/C(T2)+ ---- PR(Ti)/C(Ti)}   
+•	Parameter d known as dumping factor is set to 0.85.   
+•	The PageRank PR(A) of vertex A depends on the PageRanks of vertices T1,….,Tm incident to A, i.e. pointing to A.   
+•	C(Ti) denotes the outdegree of page Ti.
 
 # Input file & command-line arguments:
 The input for both of the algorithm problems would be a file a containing a graph represented through an adjacency list representation   
@@ -105,7 +113,7 @@ Iter: 17
 
 Command to implement pagerank implementation: 
 
-java Pgrk_8304 7 1 samplegraph2.txt. 
+java Pgrk_8304 7 1 samplegraph2.txt.    
 Base : 0 :  P[ 0]=1.0000000 P[ 1]=1.0000000 P[ 2]=1.0000000 P[ 3]=1.0000000  
 Iter : 1 :  P[ 0]=1.0000000 P[ 1]=1.0000000 P[ 2]=1.0000000 P[ 3]=1.0000000  
 Iter : 2 :  P[ 0]=0.8875000 P[ 1]=0.8875000 P[ 2]=0.4625000 P[ 3]=0.4625000  
