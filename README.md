@@ -17,11 +17,11 @@ Implementation of Kleinberg’s HITS Algorithm, and Google’s PageRank algorith
 •	We run the ’algorithm’ either for a fixed number of iterations and iterations determines that, or for a fixed errorrate (an alias for iterations); an iterations equal to 0 corresponds to a default errorrate of 10^-5. A -1, -2, etc , -6 for iterations becomes an errorrate of 10^ -1;10^-2,….,10^-6 respectively.   
 •	At iteration t when all authority/hub/PageRank values have been completed, we compare for every vertex the current and the previous iteration values. If the difference is less than errorrate for EVERY VERTEX, then and only then can we stop at iteration t.  
 
-# Input file & command-line arguments discription:
+# Input file & command-line arguments:
 The input for both of the algorithm problems would be a file a containing a graph represented through an adjacency list representation   
 
 * The command-line interface is as follows:  
-% java <program_name> <iterations> <initialvalue> <filename>  
+% java program_name iterations initialvalue filename  
  
 •	Argument iterations denotes the number of iterations if it is a positive integer or an errorrate for a negative or zero integer value.  
 •	Argument initialvalue sets the initial vector values. If it is 0 they are initialized to 0, if it is 1 they are initialized to 1. If it is -1 they are initialized to 1/N, if it is -2 they are initialized to 1/N^(1/2),where N is the number of web-pages (vertices of the graph).    
@@ -104,6 +104,17 @@ Iter: 17
 ---------------------------------------------
 
 Command to implement pagerank implementation: 
+
+java Pgrk_8304 7 1 samplegraph2.txt. 
+Base : 0 :  P[ 0]=1.0000000 P[ 1]=1.0000000 P[ 2]=1.0000000 P[ 3]=1.0000000
+Iter : 1 :  P[ 0]=1.0000000 P[ 1]=1.0000000 P[ 2]=1.0000000 P[ 3]=1.0000000
+Iter : 2 :  P[ 0]=0.8875000 P[ 1]=0.8875000 P[ 2]=0.4625000 P[ 3]=0.4625000
+Iter : 3 :  P[ 0]=0.7918750 P[ 1]=0.4306250 P[ 2]=0.4146875 P[ 3]=0.4146875
+Iter : 4 :  P[ 0]=0.4035313 P[ 1]=0.3899844 P[ 2]=0.3740469 P[ 3]=0.3740469
+Iter : 5 :  P[ 0]=0.3689867 P[ 1]=0.3554398 P[ 2]=0.2090008 P[ 3]=0.2090008
+Iter : 6 :  P[ 0]=0.3396239 P[ 1]=0.2151507 P[ 2]=0.1943194 P[ 3]=0.1943194
+Iter : 7 :  P[ 0]=0.2203781 P[ 1]=0.2026715 P[ 2]=0.1818401 P[ 3]=0.1818401
+
 java Pgrk 15 -1 largegraph.txt
 
 Output:  
